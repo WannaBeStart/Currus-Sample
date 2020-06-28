@@ -1,0 +1,584 @@
+/* First Configuration */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary : #0E247A;
+  --secondary : #3CCF9D;
+  --light : #F5F5F5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+/* Navbar Style */
+
+.navbar {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 30px 120px;
+}
+
+.navbar a img {
+  width: 11em;
+}
+
+.navbar .navbar-link {
+  margin-left: auto;
+}
+
+.navbar .navbar-link .link {
+  margin-left: 35px;
+}
+
+.navbar .navbar-link .link:hover {
+  transition: .1s ease-in;
+  color: var(--secondary);
+}
+
+/* Button Style */
+
+.wrapper-button-cta-1 {
+  width: 200px;
+  display: flex;
+}
+
+.button-cta-1 {
+  width: 9em;
+  padding: 8px 0;
+  border-radius: 5px 0 0 5px;
+  text-align: center;
+  background-color: var(--secondary);
+  transition: .2s ease;
+}
+
+.wrapper-button-cta-1 .transition-btn {
+  width: 8px;
+  height: 38px;
+  background-color: var(--secondary);
+  margin-left: 3px;
+  opacity: 0;
+  z-index: 10;
+  box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+.button-cta-1:hover {
+  animation: button-cta-1 .3s ease forwards;
+  box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+.wrapper-button-cta-1:hover .tb-1 {
+  animation: transition-btn-1 .2s .4s ease-in forwards;
+}
+
+.wrapper-button-cta-1:hover .tb-2 {
+  animation: transition-btn-2 .2s .5s ease-in forwards;
+}
+
+.wrapper-button-cta-1:hover .tb-3 {
+  animation: transition-btn-3 .2s .6s ease-in forwards;
+}
+
+/* Animation Button */
+@keyframes button-cta-1 {
+  from {
+    width: 9em;
+  }
+
+  to {
+    width: 10em;
+  }
+}
+
+@keyframes transition-btn-1 {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: .8;
+  }
+}
+
+@keyframes transition-btn-2 {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: .4;
+  }
+}
+
+@keyframes transition-btn-3 {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: .2;
+  }
+}
+
+/* Home Style */
+.firstPage {
+  display: flex;
+}
+
+.firstPage-info {
+  width: 100%;
+  height: 590px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0 0 120px;
+}
+
+.firstPage-background {
+  width: 1180px;
+  height: 590px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.secondPage {
+  width: 100%;
+  height: 656px;
+  /* border: 1px solid magenta; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thirdPage,
+.fourthPage {
+  width: 100%;
+  height: 656px;
+  /* border: 1px solid blue; */
+  display: flex;
+}
+
+.fifthPage {
+  width: 100%;
+  height: 656px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* First Page Style */
+
+.firstPage-info .firstPage-title {
+  margin-bottom: 1.5em;
+  font-size: 1.4em;
+  color: var(--primary);
+}
+
+.firstPage-info .firstPage-title h2 {
+  font-weight: 400;
+}
+
+.firstPage-info .firstPage-title h2 span {
+  font-weight: 800;
+}
+
+.firstPage-info .firstPage-paragraf {
+  margin-bottom: 2em;
+  color: var(--primary);
+}
+
+.firstPage-background img.background {
+  width: 720px;
+  position: absolute;
+  right: 0;
+  top: -100px;
+  z-index: -100;
+}
+
+.firstPage-background img.shadow {
+  width: 580px;
+  position: absolute;
+  margin-top: 125px;
+}
+
+.firstPage-background .wrapper-car {
+  position: relative;
+  display: flex;
+  margin-top: 45px;
+  margin-left: -30px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.firstPage-background img.car {
+  width: 620px;
+}
+
+.firstPage-background .wrapper-wheels {
+  width: 380px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: -65px;
+  margin-right: -12px;
+}
+
+.firstPage-background img.wheels {
+  width: 100px;
+  height: 100px;
+}
+
+.firstPage-background .wrapper-car:hover img.wheels {
+  animation: rotate .2s ease infinite;
+}
+
+.firstPage-background .wrapper-car:hover img.car {
+  animation: upDown 1s ease infinite;
+}
+
+/* Animation Car */
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+  150% {
+    transform: translateY(-15px);
+  }
+}
+
+.secondPage-info {
+  /* border: 1px solid magenta; */
+  width: 80%;
+  height: 450px;
+}
+
+.secondPage-info .secondPage-title {
+  width: 550px;
+  /* border: 1px solid magenta; */
+  margin: auto;
+  text-align: center;
+  padding: 0 0 2em 0;
+  color: var(--primary);
+}
+
+.secondPage .secondPage-title h2 {
+  font-size: 1.8em;
+  margin-bottom: .4em;
+}
+
+.secondPage .secondPage-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.secondPage .secondPage-card p {
+  font-weight: 300;
+}
+
+.secondPage .secondPage-card .card {
+  min-width: 300px;
+  height: 280px;
+  border: 1.5px solid var(--primary);
+  border-radius: 5px;
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  color: var(--primary);
+}
+
+.secondPage .secondPage-card .card .wrapper-number {
+  border-top: 1.5px solid var(--primary);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: .5em 0;
+  background-color: var(--secondary);
+  color: var(--primary);
+  border-radius: 0 0 5px 5px;
+  z-index: -1;
+}
+
+.secondPage .secondPage-card .card img.pic-step-1 {
+  width: 250px;
+  margin-bottom: 1.3em;
+}
+
+.secondPage .secondPage-card .card img.pic-step-2 {
+  width: 180px;
+  margin-bottom: 1.3em;
+  margin-top: -15px;
+  margin-right: -35px;
+}
+
+.secondPage .secondPage-card .card img.pic-step-3 {
+  width: 180px;
+  margin-bottom: 1.3em;
+  margin-top: -20px;
+}
+
+.secondPage .secondPage-line {
+  /* border: 1px solid magenta; */
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.secondPage .secondPage-line .line {
+  width: 74%;
+  height: 4px;
+  border-radius: 5px;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.secondPage .secondPage-line .line .circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50px;
+  background-color: var(--secondary);
+}
+
+.thirdPage .thirdPage-info-1 {
+  /* border: 1px solid red; */
+  width: 55%;
+  display: flex;
+  align-items: center;
+}
+
+.thirdPage .thirdPage-info-1 .background-green {
+  background-color: var(--secondary);
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.thirdPage .thirdPage-info-1 .wrapper-background-pic {
+  position: relative;
+  margin-left: 200px;
+}
+
+.thirdPage .thirdPage-info-1 .background-pic {
+  width: 450px;
+  height: 300px;
+  background-color: var(--primary);
+  border-radius: 5px;
+}
+
+.thirdPage .thirdPage-info-1 img.pic-garage {
+  width: 450px;
+  position: absolute;
+  top: -25px;
+  left: -25px;
+}
+
+.thirdPage .thirdPage-info-2 {
+  width: 45%;
+  /* border: 1px solid black; */
+  display: flex;
+  align-items: center;
+}
+
+.thirdPage .thirdPage-info-2 .wrapper-info {
+  height: 500px;
+  color: var(--primary);
+  padding-top: 3em;
+  padding-right: 9em;
+}
+
+.thirdPage .thirdPage-info-2 .thirdPage-title {
+  font-size: 1.7em;
+  text-align: center;
+  margin-bottom: 1.2em;
+}
+
+.thirdPage .thirdPage-info-2 .thirdPage-paragraf {
+  margin-bottom: 1.2em;
+}
+
+.thirdPage .thirdPage-info-2 span {
+  font-weight: bold;
+}
+
+.thirdPage .thirdPage-info-2 p {
+  font-weight: 300;
+  font-size: 1.1em;
+}
+
+.fourthPage-info {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  padding: 0 50px 0 120px;
+  color: var(--primary);
+}
+
+.fourthPage-info .fourthPage-title span {
+  font-weight: 400;
+  font-size: 28px;
+}
+
+.fourthPage-info .fourthPage-title {
+  font-size: 1.9em;
+  line-height: 1.4em;
+  margin-bottom: .5em;
+}
+
+.fourthPage-info p {
+  font-size: 1.1em;
+  margin-bottom: 1.2em;
+}
+
+.fourthPage-background {
+  width: 55%;
+  display: flex;
+  align-items: center;
+}
+
+.fourthPage-background .fourthPage-pic {
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.fourthPage-background .fourthPage-pic img {
+  width: 670px;
+  margin-left: 60px;
+}
+
+.fifthPage .fifthPage-background {
+  width: 750px;
+  height: 400px;
+  display: flex;
+  background-color: var(--secondary);
+  border-radius: 5px;
+}
+
+.fifthPage .fifthPage-info {
+  width: 400px;
+  padding: 2em;
+  padding-left: 3.5em;
+  color: var(--primary);
+}
+
+.fifthPage .fifthPage-info h4 {
+  font-size: 1.2em;
+  margin: 1.2em 0 .5em 0;
+}
+
+.fifthPage-info p {
+  margin-bottom: 2em;
+}
+
+.fifthPage .fifthPage-form {
+  background-color: white;
+  width: 300px;
+  height: 350px;
+  border-radius: 5px;
+  margin: auto;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fifthPage .fifthPage-form .username input::placeholder,
+.fifthPage .fifthPage-form .email input::placeholder,
+.fifthPage .fifthPage-form .message textarea::placeholder {
+  color: var(--primary);
+  opacity: .7;  
+  font-family: 'Montserrat', sans-serif;
+}
+
+.fifthPage .fifthPage-form .username input,
+.fifthPage .fifthPage-form .email input {
+  width: 100%;
+  height: 38px;
+  padding: 0 1.2em;
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+  margin-bottom: 1.2em;
+  color: var(--primary);
+  outline: none;
+}
+
+.fifthPage .fifthPage-form .message textarea {
+  width: 100%;
+  height: 150px;
+  padding: 1em 1.2em;
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+  margin-bottom: 1.2em;
+  color: var(--primary);
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.fifthPage .fifthPage-form .submit-btn {
+  width: 100%;
+  height: 35px;
+  border-radius: 5px;
+  background-color: var(--primary);
+  color: white;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  cursor: pointer;
+}
+
+footer {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F2FFFB;
+  border-top: 1px solid rgb(208, 238, 228);
+}
